@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Mohamed | Mechatronics Engineer | AI & Robotics</title>
+    <meta name="description" content="Portfolio of Ali Mohamed, a Mechatronics Engineer specializing in Mechanical Design, Embedded Systems, Robotics, Industrial Automation, and AI.">
+    <meta name="theme-color" content="#0a0f16">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Ali Mohamed | Mechatronics Engineer | AI & Robotics">
+    <meta property="og:description" content="Portfolio of Ali Mohamed, a Mechatronics Engineer specializing in Mechanical Design, Embedded Systems, Robotics, Industrial Automation, and AI.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Interactive Background -->
+    <div class="interactive-bg" id="interactive-bg"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Ali Mohamed</a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li class="nav-actions">
+                    <a href="#contact" class="btn-contact nav-link">Contact Me</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="section-eyebrow">Hello, I am</span>
+                    <h1 class="hero-name">Ali Mohamed</h1>
+                    <div class="hero-titles">
+                        <h2>Mechatronics Engineer | <span class="text-accent">AI & Robotics</span></h2>
+                        <div class="typing-container">
+                            <span id="typing-text" class="typing-text"></span><span class="typing-cursor"></span>
+                        </div>
+                    </div>
+                    <p class="hero-intro">
+                        Mechatronics Engineering student developing practical engineering systems across mechanical design, automation, embedded systems, robotics, and machine learning.
+                    </p>
+                    <div class="hero-actions">
+                        <button id="btn-view-cv" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            View CV
+                        </button>
+                        <a href="#" id="hero-linkedin" class="btn-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" id="hero-github" class="btn-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/profile/Main Personal Photo_croped.png" alt="Ali Mohamed" class="hero-image">
+                        
+                        <!-- Floating Labels -->
+                        <div class="floating-label float-1">
+                            <span class="dot"></span> Mechanical Design
+                        </div>
+                        <div class="floating-label float-2">
+                            <span class="dot"></span> Robotics
+                        </div>
+                        <div class="floating-label float-3">
+                            <span class="dot"></span> Embedded Systems
+                        </div>
+                        <div class="floating-label float-4">
+                            <span class="dot"></span> AI / ML
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <a href="#about" class="scroll-indicator" aria-label="Scroll Down">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-container">
+                    <span class="arrow-down"></span>
+                </div>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <span class="section-eyebrow">My Journey</span>
+                <h2 class="section-title">About Me</h2>
+                
+                <div class="about-container">
+                    <div class="about-text">
+                        <p>
+                            I am a Mechatronics Engineering student passionate about building systems that bridge the physical and digital worlds. My focus is on the seamless integration of mechanical design, electronic control, and intelligent algorithms.
+                        </p>
+                        <p>
+                            By combining these disciplines, I aim to develop practical engineering solutions ranging from custom automation systems to advanced autonomous robots. My approach is hands-on, deeply technical, and constantly expanding as I explore the intersection of traditional engineering and modern Machine Learning.
+                        </p>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="flow-container">
+                            <div class="flow-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                </div>
+                                <span>Mechanical Design</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                                </div>
+                                <span>Electronics & Embedded</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                </div>
+                                <span>Control & Automation</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
+                                </div>
+                                <span>Robotics</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node highlight">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                </div>
+                                <span>AI & Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section section-padding bg-alt">
+            <div class="container">
+                <span class="section-eyebrow">What I Do</span>
+                <h2 class="section-title">Areas of Expertise</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card interactive-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        </div>
+                        <h3>Mechanical Design</h3>
+                        <p>3D CAD modeling, prototyping, and mechanical system design using SOLIDWORKS and Fusion 360.</p>
+                    </div>
+                    
+                    <div class="service-card interactive-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
+                        </div>
+                        <h3>Robotics</h3>
+                        <p>Kinematics programming, autonomous navigation, and robotic system integration for specialized applications.</p>
+                    </div>
+                    
+                    <div class="service-card interactive-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        </div>
+                        <h3>Embedded Systems</h3>
+                        <p>Microcontroller programming (AVR, ESP32), sensor interfacing, and wireless communication using Embedded C/C++.</p>
+                    </div>
+                    
+                    <div class="service-card interactive-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>Industrial Automation</h3>
+                        <p>PLC programming, HMI development, and process simulation using Siemens TIA Portal and Classic Control systems.</p>
+                    </div>
+
+                    <div class="service-card interactive-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>PCB Design</h3>
+                        <p>Custom circuit board layout and routing for mechatronic systems using Altium Designer and Fusion 360 Electronics.</p>
+                    </div>
+                    
+                    <div class="service-card interactive-card highlight-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Developing data analysis pipelines, dashboards, and applying ML techniques to solve engineering problems using Python.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <span class="section-eyebrow">Technical Arsenal</span>
+                <h2 class="section-title">Skills & Tools</h2>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">CAD / Design</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">SOLIDWORKS</span>
+                            <span class="skill-chip">Fusion 360</span>
+                            <span class="skill-chip">Autodesk Inventor</span>
+                            <span class="skill-chip">AutoCAD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Automation</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">Siemens TIA Portal</span>
+                            <span class="skill-chip">PLC</span>
+                            <span class="skill-chip">HMI</span>
+                            <span class="skill-chip">Classic Control</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Embedded Systems</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">Embedded C</span>
+                            <span class="skill-chip">AVR Architecture</span>
+                            <span class="skill-chip">ESP32</span>
+                            <span class="skill-chip">Arduino</span>
+                            <span class="skill-chip">Proteus</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">C</span>
+                            <span class="skill-chip">C++</span>
+                            <span class="skill-chip">MATLAB</span>
+                            <span class="skill-chip">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Simulation</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">SolidWorks Simulation</span>
+                            <span class="skill-chip">ANSYS</span>
+                            <span class="skill-chip">Simulink</span>
+                            <span class="skill-chip">Factory I/O</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">PCB Design</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">Altium Designer</span>
+                            <span class="skill-chip">Fusion 360 Electronics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Core Engineering</h3>
+                        <div class="skills-flex">
+                            <span class="skill-chip">Machine Design</span>
+                            <span class="skill-chip">Inverse Kinematics</span>
+                            <span class="skill-chip">Control Theory</span>
+                            <span class="skill-chip">Data Analysis (Pandas)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="experience-section section-padding bg-alt">
+            <div class="container">
+                <span class="section-eyebrow">My Background</span>
+                <h2 class="section-title">Experience & Education</h2>
+                
+                <div class="timeline-container">
+                    
+                    <!-- Education Entry -->
+                    <div class="timeline-item education">
+                        <div class="timeline-dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep. 2022 – Present</div>
+                            <h3 class="timeline-title">Bachelor of Mechatronics Engineering</h3>
+                            <div class="timeline-subtitle">Ain Shams University | Faculty of Engineering</div>
+                            <p class="timeline-desc">
+                                Core studies spanning mechanical design, electronics, automation, and robotics.<br>
+                                <strong>GPA:</strong> 3.38 / 4.0 (B+)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 1 -->
+                    <div class="timeline-item experience">
+                        <div class="timeline-dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jul. 2026 – Present</div>
+                            <h3 class="timeline-title">Machine Learning Engineer Trainee</h3>
+                            <div class="timeline-subtitle">Microsoft Machine Learning Engineer Track (DEPI)</div>
+                            <ul class="timeline-list">
+                                <li>Studying Machine Learning, Deep Learning, Computer Vision, NLP, Azure AI, and MLOps using Python.</li>
+                                <li>Applying machine learning concepts to engineering and robotics applications through hands-on labs.</li>
+                                <li>Developing practical AI solutions as part of a capstone project.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item experience">
+                        <div class="timeline-dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Aug. 2025 – Sep. 2025</div>
+                            <h3 class="timeline-title">Manufacturing Trainee</h3>
+                            <div class="timeline-subtitle">GS Engi Tech Internship</div>
+                            <ul class="timeline-list">
+                                <li>Designed and prototyped a gaming screen holder for a racing simulator seat (TRONE) using SOLIDWORKS.</li>
+                                <li>Developed an adjustable mounting mechanism with a secure locking system to ensure stability and usability.</li>
+                                <li>Optimized the design to meet strict dimensional constraints and improve user flexibility.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item experience">
+                        <div class="timeline-dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Aug. 2025 – Sep. 2025</div>
+                            <h3 class="timeline-title">Embedded Systems Intern</h3>
+                            <div class="timeline-subtitle">NTI Training Program</div>
+                            <ul class="timeline-list">
+                                <li>Developed embedded drivers for GPIO, ADC, Timers, and Sensors using Embedded C.</li>
+                                <li>Implemented UART, SPI, and I2C communication protocols on AVR architecture.</li>
+                                <li>Validated system functionality using Proteus simulations and virtual labs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="timeline-item experience">
+                        <div class="timeline-dot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Apr. 2025 – May 2025</div>
+                            <h3 class="timeline-title">CNC Machining and Laser Cutting Intern</h3>
+                            <div class="timeline-subtitle">Innovation Hub (IHub)</div>
+                            <ul class="timeline-list">
+                                <li>Learned CNC machine setup, zero-point calibration, and G-code execution.</li>
+                                <li>Designed and manufactured a 3-pyramid model using Fusion 360 and CNC machining.</li>
+                                <li>Operated laser cutting systems for precise fabrication and production.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <span class="section-eyebrow">Portfolio</span>
+                <h2 class="section-title">Selected Projects</h2>
+                
+                <div class="projects-grid">
+                    
+                    <!-- Project 1: Mecanum -->
+                    <div class="project-card" data-project="mecanum">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/mecanum/full cad.png" alt="Modular Mecanum-Wheel Mobile Manipulator" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Robotics</div>
+                            <h3 class="project-title">Modular Mecanum-Wheel Mobile Manipulator</h3>
+                            <p class="project-desc">Decentralized Master-Slave control architecture with custom PCBs and real-time 3D Digital Twin.</p>
+                            <div class="project-tags">
+                                <span>ESP32</span>
+                                <span>Inverse Kinematics</span>
+                                <span>CAD</span>
+                            </div>
+                            <button class="btn btn-outline btn-project-details">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Air-Powered Vehicle -->
+                    <div class="project-card" data-project="air-powered">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/air-powered/full_car.jpg" alt="Air-Powered Vehicle" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Machine Design</div>
+                            <h3 class="project-title">Air-Powered Vehicle Project</h3>
+                            <p class="project-desc">Designed and built a 2.7 kg compressed-air vehicle with an ESP32-based wireless braking system.</p>
+                            <div class="project-tags">
+                                <span>Thick Cylinder Theory</span>
+                                <span>ESP32</span>
+                                <span>SolidWorks</span>
+                            </div>
+                            <button class="btn btn-outline btn-project-details">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Bottling Line -->
+                    <div class="project-card" data-project="bottling">
+                        <div class="project-img-wrapper fallback-visual">
+                            <div class="fallback-graphic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><path d="M12 14v-4"></path><path d="M8 10h8"></path><path d="M10 6h4"></path><circle cx="12" cy="4" r="2"></circle><line x1="6" y1="18" x2="6.01" y2="18"></line><line x1="10" y1="18" x2="10.01" y2="18"></line><line x1="14" y1="18" x2="14.01" y2="18"></line><line x1="18" y1="18" x2="18.01" y2="18"></line></svg>
+                                <span>SYSTEM SIMULATION</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Industrial Automation</div>
+                            <h3 class="project-title">Automated Bottling & Sorting Line</h3>
+                            <p class="project-desc">Full production line simulation with filling, height-based sorting, and PLC logic control.</p>
+                            <div class="project-tags">
+                                <span>Siemens TIA Portal</span>
+                                <span>Factory I/O</span>
+                                <span>HMI</span>
+                            </div>
+                            <button class="btn btn-outline btn-project-details">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Ford GoBike -->
+                    <div class="project-card" data-project="fordgobike">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/fordgobike/1st_dashboard_page.png" alt="Ford GoBike Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Data Analysis</div>
+                            <h3 class="project-title">Ford GoBike Data Analysis</h3>
+                            <p class="project-desc">Interactive dashboard and extensive data analysis on PostgreSQL database with Pandas preprocessing.</p>
+                            <div class="project-tags">
+                                <span>Python / Pandas</span>
+                                <span>PostgreSQL</span>
+                                <span>Dashboards</span>
+                            </div>
+                            <button class="btn btn-outline btn-project-details">View Details</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications-section section-padding bg-alt">
+            <div class="container">
+                <span class="section-eyebrow">Continuous Learning</span>
+                <h2 class="section-title">Certifications & Training</h2>
+                
+                <div class="cert-grid">
+                    <!-- Cert 1: CSWP -->
+                    <div class="cert-card interactive-card" data-cert="cswp">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Certified SOLIDWORKS Professional (CSWP)</h3>
+                            <div class="cert-issuer">Dassault Systèmes</div>
+                            <div class="cert-date">Sep. 2026</div>
+                        </div>
+                        <button class="btn-cert-view" aria-label="View Certificate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+
+                    <!-- Cert 2: CSWA -->
+                    <div class="cert-card interactive-card" data-cert="cswa">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Certified SOLIDWORKS Associate (CSWA)</h3>
+                            <div class="cert-issuer">Dassault Systèmes</div>
+                            <div class="cert-date">Dec. 2025</div>
+                        </div>
+                        <button class="btn-cert-view" aria-label="View Certificate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+
+                    <!-- Cert 3: NVIDIA LLM -->
+                    <div class="cert-card interactive-card" data-cert="llm">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Building LLM Applications with Prompt Engineering</h3>
+                            <div class="cert-issuer">NVIDIA</div>
+                            <div class="cert-date">Sep. 2025</div>
+                        </div>
+                        <button class="btn-cert-view" aria-label="View Certificate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+
+                    <!-- Cert 4: NTI -->
+                    <div class="cert-card interactive-card" data-cert="nti">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Embedded System Intern</h3>
+                            <div class="cert-issuer">NTI</div>
+                            <div class="cert-date">Sep. 2025</div>
+                        </div>
+                        <button class="btn-cert-view" aria-label="View Certificate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Cert 5: AI for All -->
+                    <div class="cert-card interactive-card" data-cert="ai">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">AI for All From Basics to GenAI Practice</h3>
+                            <div class="cert-issuer">Training Certificate</div>
+                            <div class="cert-date">Recent</div>
+                        </div>
+                        <button class="btn-cert-view" aria-label="View Certificate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <span class="section-eyebrow">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <a href="mailto:email@example.com" id="contact-email">email@example.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone / WhatsApp</h4>
+                                    <a href="tel:+201000000000" id="contact-phone">+20 100 000 0000</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <span>Cairo, Egypt</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links-container">
+                            <h4>Connect with me</h4>
+                            <div class="social-links">
+                                <a href="#" id="social-linkedin" target="_blank" aria-label="LinkedIn" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <a href="#" id="social-github" target="_blank" aria-label="GitHub" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                                <a href="#" id="social-grabcad" target="_blank" aria-label="GrabCAD" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                </a>
+                                <a href="#" id="social-scholar" target="_blank" aria-label="Google Scholar" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Hello, I would like to talk about..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Send Message
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Ali Mohamed</h3>
+                <p>Mechatronics Engineer | AI & Robotics</p>
+            </div>
+            <div class="footer-social" id="footer-social-links">
+                <!-- Links injected via JS based on config -->
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="current-year"></span> Ali Mohamed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Modals (Hidden by default) -->
+    <div id="modal-container" class="modal-container">
+        <!-- Modal content dynamically injected -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
