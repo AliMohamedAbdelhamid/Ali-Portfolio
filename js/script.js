@@ -302,12 +302,50 @@ function setupLinks() {
     if (heroGithub) heroGithub.href = portfolioConfig.github;
 }
 
+/* ==========================================================================
+   Mobile Menu Toggle
+   ========================================================================== */
+function initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuBtn && navLinks) {
+        // Initialize aria-expanded
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initParticleBackground();
     setupNavigationObserver();
     setupLinks();
     initScrollReveal();
+    initMobileMenu();
 
     if (typingTextElement) {
         setTimeout(typeEffect, 1000); // Initial delay
