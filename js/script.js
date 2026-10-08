@@ -9,7 +9,14 @@ const portfolioConfig = {
     linkedin: "https://www.linkedin.com/in/ali-mohamed-abdelhamid/", // TODO: Add Ali's LinkedIn profile URL
     github: "https://github.com/AliMohamedAbdelhamid",   // TODO: Add Ali's GitHub profile URL
     whatsapp: "#", // TODO: Add Ali's WhatsApp URL (e.g., https://wa.me/...)
-    email: "mailto:ali.mohamed.abdelhamid.443@gmail.com"
+    email: "mailto:ali.mohamed.abdelhamid.443@gmail.com",
+
+    social: {
+        linkedin: "https://www.linkedin.com/in/ali-mohamed-abdelhamid/",
+        github: "https://github.com/AliMohamedAbdelhamid",
+        grabcad: "#",
+        googleScholar: "#"
+    }
 };
 
 /* ==========================================================================
@@ -300,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticleBackground();
     setupNavigationObserver();
     setupLinks();
+    initScrollReveal();
 
     if (typingTextElement) {
         setTimeout(typeEffect, 1000); // Initial delay
@@ -690,4 +698,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
 });
+
+/* ==========================================================================
+   Scroll Reveal Animations
+   ========================================================================== */
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.section-title, .about-content, .service-card, .skill-category, .timeline-item, .project-card, .cert-card, .contact-container, .social-links-container');
+
+    // Check for reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    // Apply the initial class
+    revealElements.forEach(el => el.classList.add('reveal-on-scroll'));
+
+    const observer = new IntersectionObserver((entries) => {
+        let delay = 0;
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Apply stagger delay for elements entering at the same time
+                if (delay > 0) {
+                    entry.target.style.transitionDelay = `${delay}ms, ${delay}ms`; // delay for opacity and transform
+                }
+                entry.target.classList.add('is-revealed');
+                delay += 100; // 100ms stagger
+            } else {
+                // Reset when leaving viewport so it replays next time
+                entry.target.style.transitionDelay = '';
+                entry.target.classList.remove('is-revealed');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+}
