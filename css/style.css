@@ -6,23 +6,23 @@
     --bg-secondary: #121822;
     --bg-card: #1a2230;
     --bg-nav: rgba(10, 15, 22, 0.85);
-    
+
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-    
+
     --accent-primary: #0ea5e9;
     --accent-primary-hover: #38bdf8;
     --accent-secondary: #06b6d4;
-    
+
     --border-color: rgba(255, 255, 255, 0.1);
     --border-color-hover: rgba(14, 165, 233, 0.3);
-    
+
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
     --shadow-glow: 0 0 15px rgba(14, 165, 233, 0.15);
-    
+
     --glass-bg: rgba(26, 34, 48, 0.6);
 }
 
@@ -31,23 +31,23 @@
     --bg-secondary: #f1f5f9;
     --bg-card: #ffffff;
     --bg-nav: rgba(248, 250, 252, 0.85);
-    
+
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-muted: #94a3b8;
-    
+
     --accent-primary: #0284c7;
     --accent-primary-hover: #0369a1;
     --accent-secondary: #0891b2;
-    
+
     --border-color: rgba(0, 0, 0, 0.1);
     --border-color-hover: rgba(2, 132, 199, 0.3);
-    
+
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --shadow-glow: 0 0 15px rgba(2, 132, 199, 0.1);
-    
+
     --glass-bg: rgba(255, 255, 255, 0.7);
 }
 
@@ -127,15 +127,23 @@ button {
 /* ==========================================================================
    Typography & Utilities
    ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--text-primary);
     line-height: 1.2;
     font-weight: 700;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { 
-    font-size: clamp(2rem, 4vw, 3rem); 
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 3rem;
     text-align: center;
     position: relative;
@@ -300,11 +308,13 @@ p {
     border-radius: 2px;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--text-primary);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -371,7 +381,7 @@ p {
     .mobile-menu-btn {
         display: flex;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -387,25 +397,25 @@ p {
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         border-left: 1px solid var(--border-color);
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .nav-actions {
         margin-left: 0;
         margin-top: 1rem;
         flex-direction: column;
     }
-    
+
     .mobile-menu-btn.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-    
+
     .mobile-menu-btn.active .bar:nth-child(2) {
         opacity: 0;
     }
-    
+
     .mobile-menu-btn.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
@@ -419,7 +429,8 @@ p {
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 80px; /* Offset for navbar */
+    padding-top: 80px;
+    /* Offset for navbar */
     overflow: hidden;
 }
 
@@ -474,8 +485,15 @@ p {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-intro {
@@ -508,7 +526,7 @@ p {
     width: 100%;
     height: auto;
     border-radius: var(--radius-lg);
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
     position: relative;
     z-index: 2;
 }
@@ -540,15 +558,42 @@ p {
     box-shadow: 0 0 8px var(--accent-primary);
 }
 
-.float-1 { top: 10%; left: -5%; animation: float 6s ease-in-out infinite; }
-.float-2 { top: 40%; right: -10%; animation: float 7s ease-in-out infinite 1s; }
-.float-3 { bottom: 20%; left: -10%; animation: float 8s ease-in-out infinite 2s; }
-.float-4 { bottom: 5%; right: 10%; animation: float 6.5s ease-in-out infinite 1.5s; }
+.float-1 {
+    top: 10%;
+    left: -5%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-2 {
+    top: 40%;
+    right: -10%;
+    animation: float 7s ease-in-out infinite 1s;
+}
+
+.float-3 {
+    bottom: 20%;
+    left: -10%;
+    animation: float 8s ease-in-out infinite 2s;
+}
+
+.float-4 {
+    bottom: 5%;
+    right: 10%;
+    animation: float 6.5s ease-in-out infinite 1.5s;
+}
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .scroll-indicator {
@@ -588,8 +633,15 @@ p {
 }
 
 @keyframes scroll {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(15px); opacity: 0; }
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
 }
 
 .arrow-container {
@@ -609,38 +661,62 @@ p {
 }
 
 @keyframes arrow-down {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 992px) {
     .hero-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         text-align: center;
         gap: 3rem;
     }
-    
+
     .hero-content {
         align-items: center;
     }
-    
+
     .hero-titles h2 {
         text-align: center;
     }
-    
+
     .typing-container {
         justify-content: center;
     }
-    
+
     .hero-actions {
         justify-content: center;
     }
-    
-    .float-1 { top: 5%; left: 0; }
-    .float-2 { top: 25%; right: 0; }
-    .float-3 { bottom: 25%; left: 0; }
-    .float-4 { bottom: 5%; right: 10%; }
+
+    .float-1 {
+        top: 5%;
+        left: 0;
+    }
+
+    .float-2 {
+        top: 25%;
+        right: 0;
+    }
+
+    .float-3 {
+        bottom: 25%;
+        left: 0;
+    }
+
+    .float-4 {
+        bottom: 5%;
+        right: 10%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -651,30 +727,16 @@ p {
 }
 
 /* ==========================================================================
-   Interactive Background Grid
+   Interactive Background
    ========================================================================== */
 .interactive-bg {
     position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     pointer-events: none;
-    background-image: 
-        radial-gradient(circle at center, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    background-position: center center, center center, center center;
-    opacity: 0.5;
-}
-
-[data-theme="light"] .interactive-bg {
-    background-image: 
-        radial-gradient(circle at center, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
-        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 /* ==========================================================================
@@ -1051,21 +1113,26 @@ p {
     .timeline-container {
         padding-left: 1.5rem;
     }
+
     .timeline-container::before {
         left: 0;
     }
+
     .timeline-dot {
         left: -1.5rem;
         width: 30px;
         height: 30px;
     }
+
     .timeline-dot svg {
         width: 14px;
         height: 14px;
     }
+
     .timeline-content {
         padding: 1.5rem;
     }
+
     .timeline-content::before {
         display: none;
     }
@@ -1312,7 +1379,8 @@ p {
     margin-bottom: 0.25rem;
 }
 
-.contact-text a, .contact-text span {
+.contact-text a,
+.contact-text span {
     color: var(--text-primary);
     font-size: 1.05rem;
     font-weight: 500;
@@ -1570,12 +1638,15 @@ p {
     .modal-container {
         padding: 1rem;
     }
+
     .modal-header {
         padding: 1rem 1.5rem;
     }
+
     .modal-body {
         padding: 1.5rem;
     }
+
     .pdf-container {
         height: 60vh;
     }
@@ -1596,6 +1667,122 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+/* ==========================================================================
+   Custom Cursor
+   ========================================================================== */
+body {
+    cursor: none;
+}
+
+a,
+button,
+.interactive-card,
+.btn,
+.nav-link,
+.skill-chip {
+    cursor: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #a855f7;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #a855f7;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(168, 85, 247, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.cursor-outline.hover {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.8);
+}
+
+@media (pointer: coarse) {
+
+    body,
+    a,
+    button,
+    .interactive-card,
+    .btn,
+    .nav-link,
+    .skill-chip {
+        cursor: auto !important;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--accent-primary-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 45px;
+        height: 45px;
+    }
 }
 
 .footer-info h3 {
@@ -1672,7 +1859,8 @@ p {
 /* ==========================================================================
    Custom Cursor
    ========================================================================== */
-.cursor-dot, .cursor-outline {
+.cursor-dot,
+.cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
@@ -1705,7 +1893,9 @@ p {
 }
 
 @media (max-width: 992px) {
-    .cursor-dot, .cursor-outline {
+
+    .cursor-dot,
+    .cursor-outline {
         display: none;
     }
 }
@@ -1715,10 +1905,23 @@ p {
     html {
         scroll-behavior: auto;
     }
+
     * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+.freelance-link {
+    width: 105px !important;
+    height: 94px;
+    padding: 0 12px !important;
+    white-space: nowrap;
+}
+
+.freelance-link span {
+    font-size: 0.82rem;
+    font-weight: 600;
 }

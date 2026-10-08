@@ -6,8 +6,8 @@
    Configuration Object
    ========================================================================== */
 const portfolioConfig = {
-    linkedin: "#", // TODO: Add Ali's LinkedIn profile URL
-    github: "#",   // TODO: Add Ali's GitHub profile URL
+    linkedin: "https://www.linkedin.com/in/ali-mohamed-abdelhamid/", // TODO: Add Ali's LinkedIn profile URL
+    github: "https://github.com/AliMohamedAbdelhamid",   // TODO: Add Ali's GitHub profile URL
     whatsapp: "#", // TODO: Add Ali's WhatsApp URL (e.g., https://wa.me/...)
     email: "mailto:ali.mohamed.abdelhamid.443@gmail.com"
 };
@@ -26,7 +26,7 @@ const interactiveBg = document.getElementById('interactive-bg');
    ========================================================================== */
 function initTheme() {
     const savedTheme = localStorage.getItem('theme');
-    
+
     // Default to dark if no saved preference
     if (savedTheme) {
         rootElement.setAttribute('data-theme', savedTheme);
@@ -41,7 +41,7 @@ function initTheme() {
 function toggleTheme() {
     const currentTheme = rootElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
+
     rootElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
@@ -50,7 +50,7 @@ function toggleTheme() {
 function updateThemeIcon(theme) {
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
-    
+
     if (theme === 'dark') {
         sunIcon.style.display = 'block';
         moonIcon.style.display = 'none';
@@ -74,17 +74,17 @@ if (!isTouchDevice && !prefersReducedMotion && cursorDot && cursorOutline) {
     window.addEventListener('mousemove', (e) => {
         const posX = e.clientX;
         const posY = e.clientY;
-        
+
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
-        
+
         // Add a slight delay to the outline for smooth effect
         setTimeout(() => {
             cursorOutline.style.left = `${posX}px`;
             cursorOutline.style.top = `${posY}px`;
         }, 50);
     });
-    
+
     // Add hover effect for links and buttons
     const hoverElements = document.querySelectorAll('a, button, .interactive-card');
     hoverElements.forEach(el => {
@@ -94,18 +94,147 @@ if (!isTouchDevice && !prefersReducedMotion && cursorDot && cursorOutline) {
 }
 
 /* ==========================================================================
-   Interactive Background
+   Ambient Particle Background
    ========================================================================== */
-function setupInteractiveBackground() {
-    if (isTouchDevice || prefersReducedMotion || !interactiveBg) return;
-    
-    window.addEventListener('mousemove', (e) => {
-        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-        
-        requestAnimationFrame(() => {
-            interactiveBg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+function initParticleBackground() {
+    const bgContainer = document.getElementById('interactive-bg');
+    if (!bgContainer) return;
+
+    bgContainer.innerHTML = ''; // Clear existing contents
+
+    const canvas = document.createElement('canvas');
+    bgContainer.appendChild(canvas);
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const particles = [];
+    const numParticles = prefersReducedMotion ? 30 : 100; // Increased count by ~60%
+
+    for (let i = 0; i < numParticles; i++) {
+        particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 2 + 0.8, // Slightly larger particles
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: (Math.random() - 0.5) * 0.25,
+            baseOpacity: Math.random() * 0.6 + 0.3, // Increased brightness
+            hasGlow: Math.random() > 0.5 // 50% of particles will have a soft glow
         });
+    }
+
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    let targetMouseX = width / 2;
+    let targetMouseY = height / 2;
+
+    if (!isTouchDevice && !prefersReducedMotion) {
+        window.addEventListener('mousemove', (e) => {
+            targetMouseX = e.clientX;
+            targetMouseY = e.clientY;
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+        // Very subtle accent colors (cyan-ish)
+        const r = isDark ? 14 : 2;
+        const g = isDark ? 165 : 132;
+        const b = isDark ? 233 : 199;
+        const opacityMult = isDark ? 1 : 0.6; // lower opacity in light mode
+
+        // Smooth mouse follow for parallax
+        mouseX += (targetMouseX - mouseX) * 0.05;
+        mouseY += (targetMouseY - mouseY) * 0.05;
+
+        const offsetX = (mouseX - width / 2) * 0.02; // Very subtle parallax multiplier
+        const offsetY = (mouseY - height / 2) * 0.02;
+
+        particles.forEach(p => {
+            if (!prefersReducedMotion) {
+                p.x += p.vx;
+                p.y += p.vy;
+            }
+
+            // Wrap around
+            if (p.x < -10) p.x = width + 10;
+            if (p.x > width + 10) p.x = -10;
+            if (p.y < -10) p.y = height + 10;
+            if (p.y > height + 10) p.y = -10;
+
+            const drawX = p.x + (isTouchDevice ? 0 : offsetX * p.radius);
+            const drawY = p.y + (isTouchDevice ? 0 : offsetY * p.radius);
+
+            ctx.beginPath();
+            ctx.arc(drawX, drawY, p.radius, 0, Math.PI * 2);
+
+            const currentOpacity = p.baseOpacity * opacityMult;
+            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${currentOpacity})`;
+
+            // Add subtle glow in dark mode
+            if (p.hasGlow && isDark) {
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${currentOpacity})`;
+            } else {
+                ctx.shadowBlur = 0;
+            }
+
+            ctx.fill();
+
+            // Reset shadow to not affect other particles
+            ctx.shadowBlur = 0;
+        });
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+/* ==========================================================================
+   Active Navigation Highlight
+   ========================================================================== */
+function setupNavigationObserver() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
     });
 }
 
@@ -129,7 +258,7 @@ function typeEffect() {
     if (!typingTextElement) return;
 
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (isDeleting) {
         typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -139,19 +268,19 @@ function typeEffect() {
         charIndex++;
         typingDelay = 100; // Normal typing speed
     }
-    
+
     // If finished typing a phrase
     if (!isDeleting && charIndex === currentPhrase.length) {
         typingDelay = 2000; // Pause at the end
         isDeleting = true;
-    } 
+    }
     // If finished deleting a phrase
     else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
         typingDelay = 500; // Pause before typing new phrase
     }
-    
+
     setTimeout(typeEffect, typingDelay);
 }
 
@@ -161,20 +290,21 @@ function typeEffect() {
 function setupLinks() {
     const heroLinkedin = document.getElementById('hero-linkedin');
     const heroGithub = document.getElementById('hero-github');
-    
+
     if (heroLinkedin) heroLinkedin.href = portfolioConfig.linkedin;
     if (heroGithub) heroGithub.href = portfolioConfig.github;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
-    setupInteractiveBackground();
+    initParticleBackground();
+    setupNavigationObserver();
     setupLinks();
-    
+
     if (typingTextElement) {
         setTimeout(typeEffect, 1000); // Initial delay
     }
-    
+
     // Set current year in footer
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
@@ -250,7 +380,7 @@ function openModal(contentHtml) {
     modalContainer.innerHTML = contentHtml;
     modalContainer.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    
+
     // Add close listener
     const closeBtn = modalContainer.querySelector('.modal-close');
     if (closeBtn) {
@@ -287,7 +417,7 @@ document.querySelectorAll('.project-card').forEach(card => {
         const projectId = card.getAttribute('data-project');
         if (projectData[projectId]) {
             const data = projectData[projectId];
-            
+
             let imageHtml = '';
             if (data.image) {
                 imageHtml = `
@@ -296,9 +426,9 @@ document.querySelectorAll('.project-card').forEach(card => {
                     </div>
                 `;
             }
-            
+
             let detailsList = data.details.map(d => `<li>${d}</li>`).join('');
-            
+
             let documentHtml = '';
             if (data.document) {
                 documentHtml = `
@@ -339,7 +469,7 @@ document.querySelectorAll('.project-card').forEach(card => {
                     </div>
                 </div>
             `;
-            
+
             openModal(modalHtml);
         }
     });
@@ -405,7 +535,7 @@ document.querySelectorAll('.cert-card').forEach(card => {
         const certId = card.getAttribute('data-cert');
         if (certData[certId]) {
             const data = certData[certId];
-            
+
             const modalHtml = `
                 <div class="modal-content" style="height: 90vh;">
                     <div class="modal-header">
@@ -440,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ghLink = document.getElementById('social-github');
         const gcLink = document.getElementById('social-grabcad');
         const gsLink = document.getElementById('social-scholar');
-        
+
         if (lnLink && portfolioConfig.social.linkedin) {
             lnLink.href = portfolioConfig.social.linkedin;
         }
@@ -461,30 +591,52 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const statusDiv = document.getElementById('form-status');
         const btn = contactForm.querySelector('button[type="submit"]');
-        
+
         // Visual feedback
         const originalText = btn.innerHTML;
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
-        
-        // Simulate sending
-        setTimeout(() => {
-            contactForm.reset();
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            
-            statusDiv.textContent = 'Message sent successfully! I will get back to you soon.';
-            statusDiv.className = 'form-status success';
-            
-            // Clear message after 5 seconds
-            setTimeout(() => {
-                statusDiv.textContent = '';
-                statusDiv.className = 'form-status';
-            }, 5000);
-        }, 1500);
+
+        const formData = new FormData(contactForm);
+
+        // Ensure we use the ajax endpoint for formsubmit
+        let actionUrl = contactForm.action;
+        if (actionUrl.includes('formsubmit.co') && !actionUrl.includes('/ajax/')) {
+            actionUrl = actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        }
+
+        fetch(actionUrl, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    contactForm.reset();
+                    statusDiv.textContent = 'Message sent successfully! I will get back to you soon.';
+                    statusDiv.className = 'form-status success';
+                } else {
+                    statusDiv.textContent = 'Oops! There was a problem submitting your form.';
+                    statusDiv.className = 'form-status error';
+                }
+            })
+            .catch(error => {
+                statusDiv.textContent = 'Oops! There was a problem submitting your form.';
+                statusDiv.className = 'form-status error';
+            })
+            .finally(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                setTimeout(() => {
+                    statusDiv.textContent = '';
+                    statusDiv.className = 'form-status';
+                }, 5000);
+            });
     });
 }
 
@@ -511,18 +663,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Back to top logic
-    const backToTopBtn = document.getElementById('back-to-top');
+    const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+        const handleScroll = () => {
+            const scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollPos > 400) {
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
-        });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        document.body.addEventListener('scroll', handleScroll, { passive: true });
+        // Also listen on document just in case
+        document.addEventListener('scroll', handleScroll, { passive: true });
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            document.body.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
